@@ -1,30 +1,41 @@
-$(document).ready(function(){
+$(document).ready(function () {
     show_Comment();
-  });
+});
 
-  function show_Comment() {
-      fetch('/api/comment').then((res) => res.json()).then((data) => {
+// 댓글 삭제
+function delete_comment(num1) {
+    let formData = new FormData();
+    formData.append("_id_give", String(num1));
+    fetch("/api/delete-comment/cy", { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+        alert("삭제 완료!")
+        window.location.reload();
+    })
+}
+
+//댓글 출력 기능
+function show_Comment() {
+    fetch("/api/comment/cy").then((res) => res.json()).then((data) => {
         let rows = data['result'];
 
         $('#comments').empty();
-        rows.forEach((a)=> {
+        rows.forEach((a) => {
+            let _id = a['_id'];
             let name = a['commentName'];
             let date = a['commentDate'];
             let content = a['commentContent'];
 
-            console.log(name,date,content)
-            let temp_html =`<div class="comment1">
+            let temp_html = `<div class="comment1">
                                 <div class="comments">
                                     ${date} &nbsp; ${name} :  " ${content} "
                                 </div>
                                 <div class="btn-area">
-                                <button class="update-btn" onclick="location.href='/'">수정</button> <button class="delete-btn" onclick="">삭제</button>
+                                <button class="update-btn">수정</button> 
+                                <button class="delete-btn" onclick="delete_comment('${_id}')">삭제</button>
                                 </div>
                             </div>
                             <hr/>`
 
             $('#comments').append(temp_html);
-
         })
-      })
-  }
+    })
+}
