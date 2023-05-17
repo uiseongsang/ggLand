@@ -23,23 +23,6 @@
 </head>
 
 <body>
-    <!-- 팝업창 -->
-    <div id="popup">
-        <div id="popmenu">
-            <h3>이름</h3>
-            <h3>email</h3>
-            <p>삭제하면 되돌릴 수 없습니다.</p>
-            <p>삭제하시겠습니까?</p>
-            <div class="exit">
-                <form id="delete" action="location.href='/delete'" method="POST">
-                    <input type="submit" value="삭제" />
-                </form>
-                <button id="skip" onclick="popup_close()">취소</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 팝업창 종료 -->
     <div class="mainbody">
         <div class="container">
             <div class="header">
@@ -115,7 +98,7 @@
                             <td colspan="2">
                                 <div class="comment-tbl2">
                                     비밀번호 : <input type="password" id="password" class="">
-                                    <button type="button" class="comment-btn" onclick="">
+                                    <button type="button" class="comment-btn" onclick="posting()">
                                         방명록 작성</button></p>
                                 </div>
                             </td>

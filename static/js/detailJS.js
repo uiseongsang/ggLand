@@ -2,6 +2,25 @@ $(document).ready(function () {
     show_Comment();
 });
 
+// 방명록 저장
+function posting() {
+    //let commentId = $('#commentId').val()
+    let commentName = $('#commentName').val()
+    let commentContent = $('#commentContent').val()
+
+    let formData = new FormData();
+    //formData.append("commentId_give", commentId);
+    formData.append("commentName_give", commentName);
+    formData.append("commentContent_give", commentContent);
+
+    fetch("/api/comment-save/cy", { method: "POST", body: formData })
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data["msg"]);
+            window.location.reload();
+        });
+}
+
 // 댓글 삭제
 function delete_comment(num1) {
     let formData = new FormData();
