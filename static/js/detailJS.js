@@ -7,11 +7,18 @@ function posting() {
     //let commentId = $('#commentId').val()
     let commentName = $('#commentName').val()
     let commentContent = $('#commentContent').val()
+    let commentPassword = $('#commentPassword').val()
+    let today = new Date()
+    let commentDate = dateFormat(today)
+
+    console.log(commentName,commentContent,commentPassword,commentDate)
 
     let formData = new FormData();
     //formData.append("commentId_give", commentId);
     formData.append("commentName_give", commentName);
     formData.append("commentContent_give", commentContent);
+    formData.append("commentPassword_give", commentPassword);
+    formData.append("commentDate_give", commentDate);
 
     fetch("/api/comment-save/cy", { method: "POST", body: formData })
         .then((res) => res.json())
@@ -57,4 +64,21 @@ function show_Comment() {
             $('#comments').append(temp_html);
         })
     })
+}
+
+//Date Format 기능
+function dateFormat(date) {
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+
+    month = month >= 10 ? month : '0' + month;
+    day = day >= 10 ? day : '0' + day;
+    hour = hour >= 10 ? hour : '0' + hour;
+    minute = minute >= 10 ? minute : '0' + minute;
+    second = second >= 10 ? second : '0' + second;
+
+    return month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
 }

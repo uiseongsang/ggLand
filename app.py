@@ -1,7 +1,6 @@
 from urllib import parse
 from bson.objectid import ObjectId
 from flask import Flask, render_template, request, jsonify, redirect
-from datetime import datetime
 app = Flask(__name__)
 
 from pymongo import MongoClient
@@ -24,14 +23,16 @@ def comment_post():
     #commentId_receive = request.form['commentId_give']
     commentName_receive = request.form['commentName_give']
     commentContent_receive = request.form['commentContent_give']
-    date = str(datetime.now()) 
-    print(commentName_receive,commentContent_receive,date)
-
+    commentPassword_receive = request.form['commentPassword_give']
+    commentDate_receive = request.form['commentDate_give']
+    
     doc = {
         #'commentId':commentId_receive,
-        'commentName':commentName_receive,
-        'commentDate': date,
-        'commentContent':commentContent_receive}
+        'commentName' : commentName_receive,
+        'commentContent' : commentContent_receive,
+        'commentPassword' : commentPassword_receive,
+        'commentDate' : commentDate_receive,}
+    
     #본인 table명으로 변경해주세요
     db.cy_post.insert_one(doc)
     return jsonify({'msg':'아일랜드에 발자취를 남겼다!'})
