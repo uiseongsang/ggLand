@@ -73,6 +73,8 @@ html {
 }
 
 /* 모덜창 종료*/
+.submit-btn,
+.cancel-btn,
 .delete-btn,
 .list_btn,
 .update-btn{
