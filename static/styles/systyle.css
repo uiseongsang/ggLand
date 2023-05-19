@@ -1,0 +1,584 @@
+ /*#F9F7F7 #DBE2EF #3F72AF #112D4E*/
+ body,
+ html {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     height: 100%;
+     /*스크롤바 없애기*/
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: left;
+     color: #112D4E;
+     flex-direction: row;
+ }
+
+ * {
+     font-family: "Gowun Dodum", sans-serif;
+ }
+
+ .mycards::-webkit-scrollbar {
+     width: 10px;
+     /* 스크롤바의 너비 */
+ }
+
+
+ .mycards::-webkit-scrollbar-thumb {
+     height: 30%;
+     /* 스크롤바의 길이 */
+     background: linear-gradient(#3c5aff, #52f2fd);
+     /* 스크롤바의 색상 */
+     border-radius: 10px;
+ }
+
+ .mycards::-webkit-scrollbar-track {
+     background: #F9F7F7;
+     border-radius: 10px;
+     /*스크롤바 뒷 배경 색상*/
+ }
+
+ #list_btn {
+     background-color: #F9F7F7;
+     font-size: 16px;
+     font-style: bold;
+     color: #3490DE;
+     border-radius: 2px;
+     width: 70px;
+     height: 30px;
+     border: 2px solid #3490DE;
+     margin: 10px;
+     margin-bottom: 20px;
+     display: inline-block;
+     transition: all 0.5s;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .btn-danger:hover,
+ #button_del:hover,
+ #button_ud:hover {
+     background-color: #3490DE;
+     color: #F9F7F7;
+     transition: all 0.3s;
+     cursor: pointer;
+ }
+
+ #list_btn:hover {
+    background-color: #3490DE;
+     color: #F9F7F7;
+     animation: jelly 0.5s;
+     cursor: pointer;
+ }
+ .main {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     height: 100%;
+     /*스크롤바 없애기*/
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: left;
+     background: linear-gradient(#3c5aff, #52f2fd);
+     color: #1d074b;
+     flex-direction: row;
+ }
+
+ /*#F9F7F7 #DBE2EF #3F72AF #112D4E*/
+ /*#6FE7DD #3490DE #6639A6 #521262*/
+ .mainbody {
+     margin: auto 10px;
+     height: 90%;
+     width: 55%;
+     background-color: #E1F2FB;
+     border-radius: 10px;
+     border: 3px white solid;
+     box-shadow: 0 0 20px white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: row;
+     overflow: hidden;
+ }
+
+ .subbody {
+     margin: auto 10px;
+     height: 90%;
+     width: 35%;
+     background-color: #E1F2FB;
+     border-radius: 10px;
+     border: 3px white solid;
+     box-shadow: 0 0 20px white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     /*스크롤바 없애기*/
+     overflow: hidden
+ }
+
+ .container {
+     width: 90%;
+     text-align: center;
+     margin-top: 10px;
+ }
+
+ .header {
+     text-align: center;
+     display: flex;
+ }
+
+ .text1 {
+     text-align: left;
+     font-size: 18px;
+     height: 100%;
+     width: 50%;
+ }
+
+ .bottom_btn {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .img {
+     width: 40%;
+     height: 100%;
+     text-align: center;
+     margin-left: 90px;
+ }
+
+ /*이미지에 마우스 호버 시 이미지 흔들리는 효과*/
+ .img>img:hover{
+    animation: vibration 2s infinite;
+    cursor: none;
+ }
+
+ @keyframes vibration {
+    from {
+      transform: rotate(0.3deg);
+    }
+    to {
+      transform: rotate(-0.3deg);
+    }
+  }
+
+ .img>img {
+     text-align: center;
+     border: 2px solid #DBE2EF;
+     box-shadow: 2px 2px 4px grey;
+     /*이미지 테두리에 그림자 넣기*/
+     width: auto;
+     height: 230px;
+     margin: 25px 0px 20px 0px;
+     transition: all 0.2s linear;
+     overflow: hidden;
+ }
+
+ p {
+     font-size: 20px;
+ }
+
+ span:hover{
+    font-weight: bold;
+    color:rgba(34, 79, 242, 0.8);
+    cursor: pointer;
+ }
+
+ .mycards {
+     width: 95%;
+     display: flex;
+     flex-direction: column;
+     max-width: 95%;
+     margin: 0px auto 10px auto;
+     /*스크롤바 없애기*/
+     overflow-x: hidden
+ }
+
+ .mycards>.card {
+     margin: 0px;
+     margin-left: 20px;
+     width: 100%;
+ }
+
+ .card-body {
+     width: 70%;
+     float: left;
+ }
+
+ .card-button {
+    width: 20%;
+    float: left;
+ }
+
+ .edit-form {
+    width: 100%;
+    float: left;
+ }
+
+ #commentName,
+ #commentPassword,
+ #commentContent {
+     background-color: #F9F7F7;
+     border: 1px solid #a9a9a9;
+ }
+
+ #commentDate_ {
+     font-size: 12px;
+ }
+
+ #commentName_ {
+     font-size: 18px;
+     margin: 30px 0px 0px 0px;
+     font-style: bold;
+ }
+
+ #commentContent_ {
+     font-size: 18px;
+     margin: 0px;
+ }
+
+
+
+ .form-control {
+     margin: 5px 10px 0px 50px;
+     width: 60%;
+     background-color: #F9F7F7;
+ }
+
+ .form-control-pw{
+    margin: 0px 10px 0px 50px;
+     width: 40%;
+     background-color: #F9F7F7;
+ }
+
+ /* 등록하기 버튼 */
+ .mybtns {
+     margin: 5px 0px 5px 0px;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+ }
+
+ #commentpw {
+    width: 70%;
+ }
+
+ .btn{
+    width:30%;
+ }
+
+ .btn-danger {
+     background-color: #F9F7F7;
+     font-size: 12px;
+     font-weight: bold;
+     color: #3490DE;
+     border-radius: 2px;
+     width: 80px;
+     height: 25px;
+     border: 2px solid #3490DE;
+     margin: 0px auto 5px 0px;
+     transition: all 0.5s;
+     position: relative;
+     overflow: hidden;
+     
+ }
+
+ .btn-danger:hover{
+    background-color: #3490DE;
+    color: #F9F7F7;
+    cursor: pointer;
+    animation: jelly 0.5s;
+    font-weight: lighter;
+ }
+
+ @keyframes jelly {
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+  
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+  
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+ }
+
+ #button_ud {
+     background-color: #F9F7F7;
+     font-size: 16px;
+     font-style: bold;
+     color: #3490DE;
+     border-radius: 2px;
+     width: 70px;
+     height: 30px;
+     border: 2px solid #3490DE;
+     margin: 30px 10px 5px 10px;
+     transition: all 0.3s;
+     position: relative;
+     overflow: hidden;
+ }
+
+ #button_del {
+     background-color: #F9F7F7;
+     font-size: 16px;
+     font-style: bold;
+     color: #3490DE;
+     border-radius: 2px;
+     width: 70px;
+     height: 30px;
+     border: 2px solid #3490DE;
+     margin: 10px 10px 20px 10px;
+     transition: all 0.3s;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .mypost {
+     margin-top: 20px;
+     width: 80%;
+     float: center;
+ }
+
+
+ .line {
+     background-color: #3490DE;
+     height: 0.2%;
+     width: 95%;
+     margin-bottom: 5px;
+ }
+
+ .edit-form{
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+ }
+
+ .card-button1{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+ }
+
+ .card-button1 > input {
+    margin-top: 30px;
+    width: 50%;
+    background-color: #F9F7F7;
+    border:1px solid #a9a9a9;
+ }
+ .card-button1 > textarea {
+    margin-top: 10px;
+    width: 90%;
+    background-color: #F9F7F7;
+    border:1px solid #a9a9a9;
+ }
+
+ .card-button2{
+    display: flex;
+    flex-direction: column;
+    width: 20%;   
+ }
+
+ .card-button2 > button:nth-child(1) {
+    background-color: #F9F7F7;
+     font-size: 16px;
+     font-style: bold;
+     color: #112D4E;
+     border-radius: 2px;
+     width: 70px;
+     height: 30px;
+     border: 2px solid #112D4E;
+     margin: 30px 10px 5px 10px;
+     transition: all 0.3s;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .card-button2 > button:nth-child(2) {
+    background-color: #F9F7F7;
+     font-size: 16px;
+     font-style: bold;
+     color: #112D4E;
+     border-radius: 2px;
+     width: 70px;
+     height: 30px;
+     border: 2px solid #112D4E;
+     margin: 10px 10px 20px 10px;
+     transition: all 0.3s;
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .card-button2 > button:nth-child(1):hover,
+ .card-button2 > button:nth-child(2):hover{
+    background-color: #112D4E;
+    color: #F9F7F7;
+    transition: all 0.3s;
+    cursor: pointer;
+ }
+
+ /* 중앙에 물결효과 넣기
+    다른 요소들에 상관없이 배치됨*/
+
+ .team {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-10%, -50%);
+     width: 200px;
+     height: 200px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+
+ .circle {
+     font-size: 40px;
+     font-weight: bold;
+     color: black;
+     background-color: white;
+     border-radius: 50%;
+     width: 200px;
+     height: 200px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 3px solid white;
+     box-shadow: 0 0 20px white;
+     overflow: hidden;
+     border-radius: 100%;
+     background: linear-gradient(#3c5aff, #52f2fd);
+     transform: translate3d(0, 0, 0);
+ }
+
+ .circle:hover{
+    border: 3px solid #3490DE;
+    box-shadow: 0 0 20px #3490DE;
+ }
+
+ .wave-one {
+     width: 320px;
+     height: 320px;
+     position: absolute;
+     top: -70%;
+     left: -30%;
+     border-radius: 45%;
+     background: rgba(3, 169, 244, 0.8);
+     animation: move 3s infinite linear;
+ }
+
+ .wave-two {
+     width: 320px;
+     height: 320px;
+     position: absolute;
+     top: -90%;
+     left: -30%;
+     border-radius: 45%;
+     background: rgba(34, 79, 242, 0.8);
+     animation: move 5s infinite linear;
+ }
+
+ .wave-three {
+     width: 320px;
+     height: 320px;
+     position: absolute;
+     top: -100%;
+     left: -30%;
+     border-radius: 45%;
+     background: #1d074b;
+     border: 6px solid rgba(131, 119, 152, 0.7);
+     animation: move 7s infinite linear;
+ }
+
+ .wave-four {
+     width: 320px;
+     height: 320px;
+     position: absolute;
+     top: -100%;
+     left: -30%;
+     border-radius: 46%;
+     background: linear-gradient(rgba(252, 251, 232, 0.1) 10%, transparent);
+     animation: move 7s infinite linear;
+ }
+
+ @keyframes move {
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+ 
+ .circle > form {
+    position: absolute;
+     top: 15%;
+     left: 33%;
+     width: 70px;
+     height: 50px;
+     display: flex;
+     justify-self: center;
+     align-items: center;
+     flex-direction: column;
+ }
+
+ .circle:hover{
+    cursor: pointer;
+ }
+
+ .circle > form > p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    margin: 0px;
+ }
+
+ .circle > form > #text2 {
+    font-size: 24px;
+    color: pink;
+ }
+ /* .circle > #text2 {
+    position: absolute;
+     top: 12%;
+     left: 43%;
+     font-size: 14px;
+     width: 50px;
+     height: 50px;
+     margin-top:0px;
+     color: rgba(255, 255, 255, 0.8);
+ } */
+
+ .fa-moon {
+     position: absolute;
+     top: 40%;
+     left: 38%;
+     font-size: 130px;
+     width: 35px;
+     height: 35px;
+     color: rgba(255, 255, 255, 0.8);
+     animation: vibration 2s infinite;
+ }
+
+ @keyframes vibration {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     25% {
+         transform: rotate(-8deg);
+     }
+
+     50% {
+         transform: rotate(8deg);
+     }
+
+     75% {
+         transform: rotate(-8deg);
+     }
+
+     100% {
+         transform: rotate(0deg);
+     }
+ }

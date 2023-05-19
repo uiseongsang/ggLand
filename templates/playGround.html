@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>저녁 추천</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/1065/1065715.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('https://mblogthumb-phinf.pstatic.net/MjAxNzEyMTZfMTU1/MDAxNTEzMzkzNjM2MjAy._a7Vt8qvqQFmXBEikoPj84KIauE8aJOfCuhHBTlQpoUg.Y_lvK-vylfZfjekk2nmH-9mImfoLOOcOeAhrfYlB9AQg.JPEG.qkqnek219/IMG_8392.jpg?type=w800');
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    #iphone-frame {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTlNmMG4joAYyA6OjAMezOgFiYRe0Du7PUbW3mfSvSn8ttqR9wu9wfYUfj5VSk4y5Witc&usqp=CAU'); /* 아이폰 프레임 이미지 경로로 바꾸세요 */
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 340px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    div {
+      background-color: rgba(114, 135, 126, 0.618);
+      padding: 20px;
+      border-radius: 4px;
+    }
+    
+    #home {
+      text-align: center;
+      margin-top: 100px;
+      width: 40px;
+      height: 20px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function recommendDinner() {
+      var dinnerOptions = [
+        "피자",
+        "스테이크",
+        "돈까스",
+        "불고기",
+        "짜장면",
+        "샐러드",
+        "스시",
+        "파스타",
+        "치킨",
+        "갈비",
+        "라면",
+        "삼겹살",
+        "햄버거",
+        "김치찌개",
+        "떡볶이",
+        "쌀국수",
+        "카레",
+        "샌드위치",
+        "평양냉면"
+      ];
+      var randomIndex = Math.floor(Math.random() * dinnerOptions.length);
+      var recommendedDinner = dinnerOptions[randomIndex];
+      
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "메뉴: " + recommendedDinner;
+    }
+  </script>
+</head>
+<body>
+  <div id="iphone-frame">
+    <h1>음식 추천</h1>
+    <button onclick="recommendDinner()">추천 받기</button>
+    <p id="result"></p>
+    <p class="home">
+      <button id="home" onclick="location.href='/'"></button>
+    </p>
+  </div>
+</body>
+</html>

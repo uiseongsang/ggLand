@@ -1,70 +1,378 @@
-@charset "utf-8";
-
-* {
-    font-family: 'Gowun Dodum', sans-serif;
-}
-
-.mytitle {
+/*html, body*/
+html {
+    height: 100%;
     width: 100%;
-    height: 250px;
-
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
-    background-position: center;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    background-image: url('https://media.istockphoto.com/id/163188096/ko/%EC%82%AC%EC%A7%84/%EC%97%B4%EB%8C%80-%EC%84%AC-%ED%8C%9C%EC%A6%88.jpg?s=612x612&w=0&k=20&c=Q9SCmpJxvZZs-VzpbI0wXj6LoAi6nIMlJ0pGtp3tDZE=');
+    /* background: url("../image/land.jpeg") no-repeat; */
     background-size: cover;
-
-    color: white;
-
+}
+body {
+    /* border: 2px solid #71C9CE; */
+    height: 100%;
+    width: 80%;
+    padding: 0px;
+    margin: 0px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    
+}
+/* 폰트 */
+* {
+    font-family: 'Hahmlet', serif;
 }
 
-.mytitle > button {
-    width: 200px;
-    height: 50px;
-
-    background-color: transparent;
-    color: white;
-
-    border-radius: 50px;
-    border: 1px solid white;
-
-    margin-top: 10px;
-}
-
-.mytitle > button:hover {
-    border: 2px solid white;
-}
-
-.mycomment {
-    color: gray;
-}
-
-.mycards {
-    margin: 20px auto 0px auto;
-    width: 95%;
-    max-width: 1200px;
-}
-
-.mypost {
-    width: 95%;
-    max-width: 500px;
-    margin: 20px auto 0px auto;
-    padding: 20px;
-    box-shadow: 0px 0px 3px 0px gray;
-
+/*모덜창*/
+#popup {
     display: none;
+    /*숨기기*/
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
 }
 
-.mybtns {
+#popmenu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    background: #E4F9F5;
+    border: 2px solid #40514E;
+    border-radius: 20px;
+}
+
+#popmenu> h2 {
+    margin-top: 40px;
+    color: #112D4E;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+#popmenu> h3 {
+    color: #112D4E;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.exit {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skip {
+    background-color: #F9F7F7;
+    font-size: 14px;
+    font-style: bold;
+    color: #11999E;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid #11999E;
+    margin: 10px;
+    display: inline-block;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+#skip:hover{
+    background-color: #11999E;
+    color: #F9F7F7;
+    animation: jelly 0.5s;
+    cursor: pointer;
+}
+
+@keyframes jelly {
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+  
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+  
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+ }
+
+/* 모덜창 종료*/
+
+/*가운데 팀소개 원*/
+.team {
+    position: absolute;
+    top: 59.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.intro{
+    
+}
+.circle:hover{
+    border: 4px solid #92e5ed;
+    box-shadow: 0 0 30px #92e5ed;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.circle {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #EBFFFA;
+    box-shadow: 0 0 20px #EBFFFA;
+    overflow: hidden;
+    border-radius: 100%;
+    
+    background: linear-gradient(#0DCEDA, #6EF3D6); /*#CBF1F5 #A6E3E9 #71C9CE*/
+    transform: translate3d(0, 0, 0);
+}
+.circle > span:nth-child(2) {
+    font-size: 25px;
+}
+/*상단 글씨 있는 부분*/
+.mainhead {
+    font-weight: bold;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid #71C9CE;
+    background-color: #A6E3E9; */
+}
+/*개새랜드*/
+.maintitle {
+    color: #E4F9F5;
+    margin-top: 30px;
+    font-size: 40px;
+}
+/*마우스 호버 시 글씨 굵게 & 커서모양 포인터로*/
+.maintitle > span:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: #657dff;
+}
+/*에 오신 것을 환영합니다*/
+.maintitle2 {
+    color: #E4F9F5;
+    margin-top: 5px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+/* 개새랜드 텍스트 애니매이션*/
+@keyframes anime_textup {
+    0% {
+        top: 0;
+    }
+    20% {
+        top: -0.2rem;
+    }
+    40% {
+        top: 0
+    }
+    60% {
+        top: 0
+    }
+    80% {
+        top: 0
+    }
+    100% {
+        top: 0
+    }
+}
+.maintitle span {
+    position: relative;
+    animation: anime_textup 1.5s infinite;
+}
+.maintitle span:nth-of-type(1) {
+    animation-delay: .1s;
+}
+.maintitle span:nth-of-type(2) {
+    animation-delay: .2s;
+}
+.maintitle span:nth-of-type(3) {
+    animation-delay: .3s;
+}
+.maintitle span:nth-of-type(4) {
+    animation-delay: .4s;
+}
+/*mainbody*/
+/*#F9F7F7 #DBE2EF #3F72AF #112D4E*/
+/*#E3FDFD #CBF1F5 #A6E3E9 #71C9CE*/
+.mainbody {
+   /* background-color: #CBF1F5; */
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.mainbody>div {
+    height: 33%;
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+}
+.mainbody1>div {
+    margin: 0px auto;
+    width: 30%;
+    height: 100%;
+    background-color: #E3FDFD;
+}
+ /*#E3FDFD #CBF1F5 #A6E3E9 #71C9CE*/
+.page1 {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background-color: #EBFFFA;
+    border: 2px solid #6EF3D6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #6EF3D6;
+}
+.page1>img,
+.page2>img,
+.page3>img,
+.page4>img,
+.page5>img {
+    max-height: 120px;
+    max-width: 120px;
+    width: 50%;
+    margin-left: 10px;
+    border: 2px solid #6EF3D6;
+}
+.page1>.pagetext,
+.page2>.pagetext,
+.page3>.pagetext,
+.page4>.pagetext,
+.page5>.pagetext {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 10px;
+}
+.pagetext>span {
+    font-size: 18px;
+    margin: 3px 2px 3px 1px;
+}
+.page2 {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #EBFFFA;
+    border: 2px solid #6EF3D6;
+    box-shadow: 0 0 10px #6EF3D6;
+}
+.page3 {
+    position: absolute;
+    top: 60%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBFFFA;
+    border: 2px solid #6EF3D6;
+    box-shadow: 0 0 10px #6EF3D6;
+}
+.page4 {
+    position: absolute;
+    top: 87%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    border-radius: 5px;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBFFFA;
+    border: 2px solid #6EF3D6;
+    box-shadow: 0 0 10px #6EF3D6;
+}
+.page5 {
+    position: absolute;
+    top: 87%;
+    left: 65%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBFFFA;
+    border: 2px solid #6EF3D6;
+    box-shadow: 0 0 10px #6EF3D6;
+}
+.page1:hover,
+.page2:hover,
+.page3:hover,
+.page4:hover,
+.page5:hover{
+    border: 3px solid #0DCEDA;
+    box-shadow: 0 0 20px #6EF3D6;
+    cursor: pointer;
+}
 
-    margin-top: 20px;
-}
-.mybtns > button {
-    margin-right: 10px;
-}
+#mini:hover {
+    text-shadow: -2px 0px yellow, 0px 2px yellow, 2px 0px yellow, 0px -2px yellow;
+ }

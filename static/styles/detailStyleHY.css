@@ -1,0 +1,402 @@
+
+/*index5.html*/
+/*#F9F7F7 #DBE2EF #3F72AF #112D4E*/
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /*스크롤바 없애기*/
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://lonelyplanet.co.kr/upload/moduleBasic/AI_00003007/d23906ce-e652-45f8-b74e-0c1407b1af44.jpg');
+    background-size: 2000px;
+    color: #112D4E;
+}
+
+* {
+    font-family: "Gowun Dodum", sans-serif;
+}
+
+#list_btn {
+    background-color: #F9F7F7;
+    font-size: 16px;
+    font-style: bold;
+    color: #3490DE;
+    border-radius: 2px;
+    width: 70px;
+    height: 30px;
+    border: 2px solid #3490DE;
+    margin: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+#list_btn:hover {
+    background-color: #3490DE;
+     color: #F9F7F7;
+     animation: jelly 0.5s;
+     cursor: pointer;
+ }
+
+ @keyframes jelly {
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+  
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+  
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+}
+
+/*모덜창*/
+#popup {
+    display: none;
+    /*숨기기*/
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#popmenu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    background: #DBE2EF;
+    border: 2px solid #112D4E;
+    border-radius: 20px;
+}
+
+#popmenu>#h3-1 {
+    margin-top: 30px;
+    color: #112D4E;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+#popmenu>p,
+#popmenu>#h3-2 {
+    color: #112D4E;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.exit {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모덜창 종료*/
+.delete-btn,
+.list_btn,
+.update-btn{
+    background-color: #F9F7F7;
+    font-size: 14px;
+    font-style: bold;
+    color: #3F72AF;
+    border-radius: 2px;
+    width: 50px;
+    height: 25px;
+    border: 2px solid #3F72AF;
+    margin: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+#skip,
+#delete>input {
+    background-color: #F9F7F7;
+    font-size: 14px;
+    font-style: bold;
+    color: #3F72AF;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid #3F72AF;
+    margin: 10px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete-btn:hover,
+.update-btn:hover,
+.list-btn:hover,
+.comment-btn:hover,
+.likeCnt:hover,
+.submit-btn:hover,
+.cancel-btn:hover,
+.skip:hover,
+.delete>input:hover {
+    background-color: #112D4E;
+    color: #F9F7F7;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.exit {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*#F9F7F7 #DBE2EF #3F72AF #112D4E*/
+.mainbody {
+    overflow: auto;
+    margin: 10px 20px;
+    width: 60%;
+    height: 80%;
+    background-color: #F9F7F7;
+    border: 2px #3F72AF solid;
+    box-shadow: 2px 2px 4px grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px;
+}
+
+::-webkit-scrollbar {
+    display: block;
+    width: 20px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #3F72AF;
+}
+
+h1 {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ;
+}
+h2 {
+    font-size: 20px;
+    color: #3F72AF;
+}
+
+h3 {
+    font-size: 25px;
+    color: #3F72AF;
+}
+
+p {
+    font-size: 20px;
+    text-align: left;
+
+}
+
+.likeCnt{
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.text1 {
+    text-align: left;
+    font-size: 18px;
+    height: auto;
+}
+
+.bottom_btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    padding: auto 20px;
+}
+
+.img>img {
+    text-align: center;
+    border: 2px solid #DBE2EF;
+    box-shadow: 2px 2px 4px grey;
+    /*이미지 테두리에 그림자 넣기*/
+    width: auto;
+    height: 230px;
+    margin: 35px 20px 20px 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.comment-tbl {
+    float: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.comment-tbl2 {
+    float : right;
+    width: 350px;
+}
+
+.form-control {
+    margin-left: 10px;
+    width: 500px;
+}
+
+.comment-btn
+{
+    background-color: #F9F7F7;
+    font-size: 14px;
+    font-style: bold;
+    color: #3F72AF;
+    border-radius: 2px;
+    width: 100px;
+    height: 25px;
+    border: 2px solid #3F72AF;
+    margin: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.comment-area {
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.comment-box {
+    color: #112D4E;
+    background-color: #F9F7F7;
+    border-radius: 10px;
+    padding : 20px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    margin-block-end: 20px;
+}
+
+.comments {
+    text-align: center;
+    float: left;
+}
+
+.btn-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    font-size: 15px;
+}
+
+.likeCnt {
+    color: red;
+    border: none;
+    outline: none;
+    width: auto;
+    height: auto;
+    background-color: Transparent;
+}
+
+.edit-name {
+    float: left;
+    width: 600px;
+    margin-bottom: 5px;
+}
+
+.edit-content-area {
+    float: left;
+}
+
+.edit-content {
+    float: left;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.edit-area{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.submit-btn,
+.cancel-btn
+{
+    background-color: #F9F7F7;
+    font-size: 14px;
+    font-style: bold;
+    color: #3F72AF;
+    border-radius: 2px;
+    width: 50px;
+    height: 25px;
+    border: 2px solid #3F72AF;
+    margin-right: 22px;
+    margin-left: 22px;
+    margin-bottom: 5px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn {
+    float: right;
+}

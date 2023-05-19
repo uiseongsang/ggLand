@@ -22,6 +22,44 @@ html {
     font-family: "Gowun Dodum", sans-serif;
 }
 
+#list_btn {
+    background-color: #F9F7F7;
+    font-size: 16px;
+    font-style: bold;
+    color: #3490DE;
+    border-radius: 2px;
+    width: 70px;
+    height: 30px;
+    border: 2px solid #3490DE;
+    margin: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+#list_btn:hover {
+    background-color: #3490DE;
+     color: #F9F7F7;
+     animation: jelly 0.5s;
+     cursor: pointer;
+ }
+
+ @keyframes jelly {
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+  
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+  
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+ }
+
 /*모덜창*/
 #popup {
     display: none;
@@ -73,8 +111,6 @@ html {
 }
 
 /* 모덜창 종료*/
-.submit-btn,
-.cancel-btn,
 .delete-btn,
 .list_btn,
 .update-btn{
@@ -257,4 +293,50 @@ p {
     align-items: right;
     justify-content: right;
     font-size: 15px;
+}
+
+.edit-name {
+    float: left;
+    width: 600px;
+    margin-bottom: 5px;
+}
+
+.edit-content-area {
+    float: left;
+}
+
+.edit-content {
+    float: left;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.edit-area{
+    display: flex;
+    flex-direction: row;
+}
+
+.submit-btn,
+.cancel-btn
+{
+    background-color: #F9F7F7;
+    font-size: 14px;
+    font-style: bold;
+    color: #3F72AF;
+    border-radius: 2px;
+    width: 50px;
+    height: 25px;
+    border: 2px solid #3F72AF;
+    margin-right: 22px;
+    margin-left: 22px;
+    margin-bottom: 5px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn {
+    float: right;
 }
